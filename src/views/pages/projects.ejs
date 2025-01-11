@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <div class="jumbotron">
+    <h1><%= locals.firstHeading %></h1>
+
+    <p>As a javascript developer, I work on some interesting projects. There is an overview of the most relevant.</p>
+    <section>
+	<h2>Web apps</h2>
+	<div class="projects">
+		<%  locals.webApps.forEach(webApp => {%>
+		<div key="<%= webApp.id %>" class="project">
+		<h3><%= webApp.title %></h3>
+		<p><%= webApp.description %></p>
+		<a href="/projects/<%= webApp.id %>"  appearance="button">View</a>
+		<a href="<%= webApp.githubLink %>" >Code</a>
+		</div>
+		<% }); %>
+	</div>
+
+    </section>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
