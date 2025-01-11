@@ -1,0 +1,12 @@
+.DS_Store
+config.ini
+latest-change.txt
+*-ck.js
+bower_components/*
+node_modules/*
+source/js/vendor/*
+report/*
+.sass-cache
+
+# ignore environment variable
+.env

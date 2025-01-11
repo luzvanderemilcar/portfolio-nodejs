@@ -1,0 +1,29 @@
+GNU nano 8.3              index.ejs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <divclass="jumbotron">
+    <h1><%= locals.firstHeading %></h1>
+
+    <p>TTis mommy</p>
+
+    <h2>Variable</h2>
+    <p><%= locals.tagline %</p>
+  </div>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
