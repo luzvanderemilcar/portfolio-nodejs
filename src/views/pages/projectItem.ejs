@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+-<!DOCTYPE html>
 <html lang="en">
 <head>
   <%- include('../partials/head'); %>
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body class="container">
 
@@ -11,16 +12,16 @@
 
 <main>
 
-    <section project-id="<%= locals.id %>" >
+    <section "project-id"="<%= locals.project?.id %>" >
 
-    <h1><%= locals.title  %></h1>
-    <p><%= locals.description %></p>
-    <img src="<%= locals.imageUrl %>" alt="image of project named <%= locals.title %>"  />
+    <h1><%= locals.project?.title  %></h1>
+    <p><%= locals.project?.description %></p>
+    <img src="<%= locals.project?.imageUrl %>" alt="image of project named <%= locals.project?.title %>"  />
     <section>
         <h2>Origin</h2>
         <div class="projects">
-		<div><%= locals.summary %></div> 
-                <a href="<%= locals.codeLink %>" >Code</a>                                                                       </div>
+		<div><%= locals.project?.summary %></div> 
+                <a href="<%= locals.project?.codeLink %>" >Code</a>                                                                       </div>
 	</div>
     </section>
 </main>

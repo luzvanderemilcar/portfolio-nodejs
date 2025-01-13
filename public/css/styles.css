@@ -1,6 +1,54 @@
+:root {
+
+  --soft-light-color: #FEFEFE;
+  --primary-color: dark;
+  --secondary-color: lightblue;
+  --light-gray-color: #F3F3F3;
+  --nav-text-color: #fff;
+}
+
 * { padding : 0; margin: 0 }
 
-body { font-size: 14px; background-color : lightgray  }
+body { font-size: 14px; background-color: lightblue; }
 
-h1 { color : lightblue ; }
+h1,h2,h3,h4,h5 { margin-block: 1em; font-family: "Roboto", "Monospace"; }
 
+
+#navbar {
+position: fixed;
+display : flex;
+top: 0px;
+left:0px;
+width: 100%;
+height: 10%;
+max-height: 10em;
+background-color: var(--primary-color, dark);
+border-bottom: 2px solid var(--secondary-color, darkgray); 
+} 
+
+nav ol { margin: 0px; padding: 0.5em 0px; } 
+
+nav li { display: inline; margin-right: 1.25em; } 
+
+nav a { text-decoration: none; color: var(--nav-text-color, #FFFFFF); }
+
+header {
+margin-top: max(10%, 10em);
+}
+
+main { color:  var(--primary-color, dark); margin: 1em;}
+
+div { padding: 1rem; margin: 0.5rem; background-color: var(--soft-color, #fefefe); }
+
+form { background-color: var(--light-gray-color, lightgray); }
+p {margin: 0.5em; }
+
+label {
+ display: block
+}
+
+.rounded-corner { border-radius: 15px; }
+
+.padded { padding: 7% 5%; }
+
+.form-item { display : block; margin-block: 2.5%; }

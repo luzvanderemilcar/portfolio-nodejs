@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+
+    <section class="padded">
+    <form class="form rounded-border" method="POST" action="/projects/">
+<div class="form-item">
+   <label for="project-title">Title</label>
+   <input id="project-title" type="text" name="title"  value="<%= locals.project?.title  %>" placeholder="ex. Bakery Store" minlength="10" required >
+</div>
+<div class="form-item">
+   <label for="project-code-link">Code Link</label>
+   <input id="project-code-link" type="text" name="codeLink"   value="<%= locals.project?.codeLink %>" placeholder="ex. https://github.com/repository" >
+</div>
+
+<div class="form-item">
+   <label for="project-description">Description</label>
+   <textarea id="project-description" name="description"  value="<%= locals.project?.description %>" placeholder="ex. This is a project..." ></textarea>
+</div>
+<div class="form-item">
+   <label for="project-summary">Summary</label>
+   <textarea id="project-summary" name="summary"  value="<%= locals.project?.summary %>" placeholder="ex. Bakery Store" ></textarea>
+</div>
+<div class="form-item">
+   <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+</div>
+    </section>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
+
+
