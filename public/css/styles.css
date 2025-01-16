@@ -2,9 +2,21 @@
 
   --soft-light-color: #FEFEFE;
   --primary-color: #a01959;
+  --primary-color-hover: #2b5292;
+  --primary-color-clicked: #7c1345;
+
+  --darkgray-color: #2c2d2c;
+  --darkgray-color-hover: #1a1a1a;
+  --darkgray-color-clicked: #484a48;
+
   --secondary-color: lightblue;
-  --light-gray-color: #F3F3F3;
-  --nav-text-color: #fff;
+
+  --lightgray-color: #e2e1e6;
+  --lightgray-hover: #e7e8ec;
+  --lightgray-clicked: #bfc0c3;
+
+  --white-color: #fff;
+  --black-color: #000;
   -- bg-color: #f9f9f9;
 }
 
@@ -12,10 +24,21 @@
 
 body { font-size: 14px; background-color: var(--bg-color, #f9f9f9);  }
 
-h1,h2 { color: var(--primary-color, black); margin-block: 1em; font-family: "Roboto", "Monospace"; }
+h1,h2,h3,h4,h5 {  margin-block: 1em; font-family: "Roboto", "Monospace"; }
 
-h3,h4,h5 {  margin-block: 1em; font-family: "Roboto", "Monospace"; }
+a { color: var(--primary-color, auto); }
 
+a:hover { color: var(--primary-color-hover, auto);}
+
+.primary-text { color: var(--primary-color, black); }
+
+.rounded-corner { border-radius: 15px; }
+
+.padded { padding: 5% 3%; }
+
+.text-center {text-align: center;  }
+
+.form-item { display : block; margin-block: 2.5%; }
 
 #navbar {
 position: fixed;
@@ -30,7 +53,7 @@ height: 10%;
 max-height: 10em;
 background-color: var(--primary-color, dark);
 border-bottom: 2px solid var(--secondary-color, darkgray); 
-color: var(--nav-text-color, white);
+color: var(--white-color, white);
 } 
 
 .logo-wrapper {width: 10%; max-width: 5em; border: 1px solid black; border-radius: 25px }
@@ -44,9 +67,11 @@ padding: 0.5em 0px; }
 
 nav li { display: inline; margin-right: 1.25em; } 
 
-nav a { text-decoration: none; color: var(--nav-text-color, #FFFFFF); }
+nav a { text-decoration: none; color: var(--white-color, #FFFFFF); }
 
 main { margin: 7.5em 2.5em 2.5em;}
+
+section { background-color: var(--lightgray-color, white); }
 
 header {
 margin-top: max(5%, 5em);
@@ -54,21 +79,11 @@ margin-top: max(5%, 5em);
 
 div { padding:0.25em; margin: 0.5em; background-color: var(--soft-color, #fefefe); }
 
-form { background-color: var(--light-gray-color, lightgray); }
+form { background-color: var(--lightgray-color, lightgray); }
 p {margin: 0.5em; }
 
 label {
  display: block
 }
 
-.rounded-corner { border-radius: 15px; }
-
-.padded { padding: 5% 3%; }
-
-.text-center {text-align: center;  }
-
-.form-item { display : block; margin-block: 2.5%; }
-
 footer {background-color: var(--dark-color, black); color: var(--white-color, white);font-size: 0.75em; padding: 5%; text-align: center }
-
-.footer-link { color: var(--primary-color, white); }

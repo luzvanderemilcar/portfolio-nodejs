@@ -11,19 +11,21 @@
 </header>
 
 <main>
-    <h1><%= locals.firstHeading %></h1>
+    <h1 class="primary-text"><%= locals.firstHeading %></h1>
 
     <p>As a javascript developer, I work on some interesting projects. There is an overview of the most relevant.</p>
     <hr />
     <section>
-	<h2>Web apps</h2>
+	<h2 class="primary-text">Web apps</h2>
 	<div class="projects">
 		<%  locals.webApps?.forEach(webApp => {%>
 		<div key="<%= webApp.id %>" class="project">
 		<h3><%= webApp.title %></h3>
 		<p><%= webApp.description %></p>
 		<a href="/projects/<%= webApp.id %>"  appearance="button">View</a>
-		<a href="<%= webApp.codeLink %>" >Code</a>
+		<% if (webApp.codeLink) { %>
+			<a href="<%= webApp.codeLink %>" >Code</a>
+		 <% }%>
 		</div>
 		<% }); %>
 	</div>
