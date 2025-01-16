@@ -14,10 +14,11 @@
     <h1><%= locals.firstHeading %></h1>
 
     <p>As a javascript developer, I work on some interesting projects. There is an overview of the most relevant.</p>
+    <hr />
     <section>
 	<h2>Web apps</h2>
 	<div class="projects">
-		<%  locals.webApps.forEach(webApp => {%>
+		<%  locals.webApps?.forEach(webApp => {%>
 		<div key="<%= webApp.id %>" class="project">
 		<h3><%= webApp.title %></h3>
 		<p><%= webApp.description %></p>

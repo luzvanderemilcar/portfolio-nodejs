@@ -24,7 +24,6 @@
     },
     "node_modules/array-flatten": {
       "version": "1.1.1",
-
       "resolved": "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz",
       "integrity": "sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==",
       "license": "MIT"
@@ -95,7 +94,6 @@
       "version": "0.5.4",
       "resolved": "https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.4.tgz",
       "integrity": "sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==",
-
       "license": "MIT",
       "dependencies": {
         "safe-buffer": "5.2.1"
@@ -877,9 +875,10 @@
     "mime": "^1.6.0",
     "mime-db": "^1.52.0",
     "mime-types": "^2.1.35",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5",
     "ms": "^2.0.0",
     "negotiator": "^0.6.3",
-    "nodemon": "^3.1.9",
     "object-inspect": "^1.13.3",
     "on-finished": "^2.4.1",
     "parseurl": "^1.3.3",
@@ -906,8 +905,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
-
+    "start": "node app.js",
+    "startDev": "nodemon app.js"
   },
   "author": "Luzvander EMILCAR",
   "license": "ISC",
