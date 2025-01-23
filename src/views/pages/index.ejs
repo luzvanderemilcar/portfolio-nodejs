@@ -11,14 +11,33 @@
 </header>
 
 <main>
-  <div class="jumbotron">
+<section>
+  <div class="main-container">
+    <img class="main-image"  src="/assets/images/main-picture.jpg" alt="pictures of <%= locals.name || "me" %>" />
+    <div class="big-heading-container">
     <h1 class="primary-text"><%= locals.firstHeading %></h1>
-
-    <p>Welcome to templating using EJS</p>
-
-    <h2>Variable</h2>
-    <p><%= locals.tagline %></p>
+    <p><%= locals.name %></p>
+    </div>  
   </div>
+</section>
+<section>
+  <div class="intro">
+    <h2><%= locals.sectionHeading %></h2>
+    <div class="overview"><%= locals.overview %></div>
+    <hr />
+    <h2><%= locals.lists?.introductoryPhrase %></h2>
+    <div class="skills">
+	<% locals.lists?.items.forEach(listItem => { %>
+		<ul>
+		  <li><%= listItem %></li>
+		</ul>
+	<% }); %>
+    </div>
+  <div>
+    <a href="/about" appearance="button" >More</a>
+  </div>
+</div>
+</section>
 </main>
 
 <footer>

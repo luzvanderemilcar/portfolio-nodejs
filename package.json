@@ -841,6 +841,7 @@
     "content-type": "^1.0.5",
     "cookie": "^0.7.1",
     "cookie-signature": "^1.0.6",
+    "d3": "^7.9.0",
     "debug": "^2.6.9",
     "depd": "^2.0.0",
     "destroy": "^1.2.0",
@@ -906,9 +907,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "startDev": "nodemon app.js"
+    "dev": "nodemon app.js"
   },
   "author": "Luzvander EMILCAR",
   "license": "ISC",
+  "keywords": [
+    "portfolio",
+    "resume",
+    "developer",
+    "designer"
+  ],
   "type": "module"
 }

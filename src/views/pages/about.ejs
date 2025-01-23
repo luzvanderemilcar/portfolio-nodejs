@@ -11,14 +11,75 @@
 </header>
 
 <main>
-  <divclass="jumbotron">
-    <h1><%= locals.firstHeading %></h1>
+  <section class="layout rounded-corner padded">
+     <h1><%= locals.firstHeading %></h1>
+     <div class="title">
+        <ul>
+         <% locals.titles.forEach(title =>{ %>
+           <li><%= title.name %></li>
+         <% }); %>
+        </ul>
+     </div>
+  </section>
 
-    <p>TTis mommy</p>
+</hr>
 
-    <h2>Variable</h2>
-    <p><%= locals.tagline %></p>
+  <section>
+  <div>
+    <h2>Education</h2>
+    <p><%= locals.education?.description %></p>
   </div>
+</hr />
+<% locals.education?.list?.forEach(educationItem => { %> 
+  <div>
+  <h3><%= educationItem.heading  %></h3>
+  <p><%= educationItem.schoolName %></p>
+  <hr class="heading-base" />
+  <% for (let key in educationItem ) { %>
+      <% if (key != "schoolName" && key != "heading") { %>
+         <p><em><%= key %></em> : <%= educationItem[key] %></p>
+      <% } %>
+ <% } %>
+</div>
+
+<% }); %>
+  </section>
+
+<% locals.sections?.forEach(section => { %>
+<section id="<%= section.title %>" >
+  <div class="header-div">
+    <% if (section.icon) %> <div class="header-icon"><%= section.icon %></div>
+    <div class="header-text">
+      <h2 class="heading"><%= section.sectionHeading %></h2>
+    </div>
+  </div>
+  <% if (section.description) { %>
+    <div class="section-description">
+      <p><%= section.description %></p>
+    </div>
+  <% } %>
+  <hr />
+  <% if (section.lists) { %>
+    <% section.lists.forEach(list => { %>
+      <div class="subsection">
+        <h3><%= list.heading %></h3>
+        <p><%= list.introductoryPhrase %></p>
+        <hr class="heading-base" />
+        <ul>
+          <% list.items?.forEach((item, idx) => { %>
+          <li itemid="<%= idx %>" ><%= item %></li>
+          <% }); %>
+        </ul>
+      </div>
+    <% }); %>
+  <% } %>
+</section>
+
+<% }); %>
+<section>
+
+</section>
+
 </main>
 
 <footer>

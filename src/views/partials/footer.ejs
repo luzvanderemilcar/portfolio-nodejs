@@ -1,4 +1,22 @@
-<p>Author: Luzvander EMILCAR</p>
-<p><a class="footer-link" href="mailto:luzvanderemilcar@gmail.com">luzvanderemilcar@gmail.com</a></p>
-<p>Copyright: 2025</p>
-
+<div class="contact-infos"
+<div>
+  <h4>Contactez-moi</h4>
+  <ul>
+     <li><a class="footer-link" href="mailto:luzvanderemilcar@gmail.com">luzvanderemilcar@gmail.com</a></li>
+     <li>Example</li>
+  </ul>
+</div>
+<div>
+  <h4>Restons connecté</h4>
+  <ol>
+   <% locals.links?.forEach(link => { %>
+     <li><a class="footer-link" href="<%= link.href %>" ><%= link.icon %><span><%= link.name %></span></a></li>
+   <% }); %>
+  </ol>
+</div>
+</div>
+<hr />
+<div class="copyright-infos">
+  <p>Author: Luzvander EMILCAR</p>
+  <p>Copyright: 2025</p>
+</div>

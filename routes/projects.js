@@ -1,6 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { getObjectById, getObjectByKeyValue, matchValueArray, findByIdAndUpdateKeyValue, findByIdAndUpdate, copyKeys, sequenceArray, removeObjectAt, removeObjectById, testKeyValue } from "../utils/processArrayOfObjects.js";
+import cvData from "../assets/data/cvData.js";
+
+let { header, resume, contact, mainContent, footer } = cvData;
 
 const router  = express.Router();
 
@@ -15,8 +18,7 @@ router.use(bodyParser.urlencoded({extended: true}));
 router.use(express.static('public'));
 
 router.get('/', (req, res) => { 
-
-  res.render("pages/projects", {title: "projects", tagline: "Projects", firstHeading: "Find out interesting projects", webApps : webApps});
+  res.render("pages/projects", {title: "projects", tagline: "Projects", firstHeading: "Find out interesting projects", webApps : webApps, ...footer});
 });
 
 router.post("/", (req, res) => {

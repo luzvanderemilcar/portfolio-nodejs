@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import bodyParser from "body-parser";
+import homeRouter from "./routes/home.js";
 import projectRouter from "./routes/projects.js";
 import aboutRouter from "./routes/about.js";
 
@@ -18,10 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  res.render("pages/index", {title: "welcome", tagline: "positive", firstHeading: "Welcome aboard" });
-});
-
+app.use('/', homeRouter);
 app.use('/projects', projectRouter);
 app.use('/about', aboutRouter);
 
