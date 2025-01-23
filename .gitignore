@@ -10,3 +10,5 @@ report/*
 
 # ignore environment variable
 .env
+view.js
+*imported.css
