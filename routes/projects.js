@@ -38,7 +38,7 @@ router.get("/add", (req, res) => {
 // router for specific project 
 router.route("/:id")
   .get((req, res) => {
-        console.log(req.baseUrl)
+
         res.render("pages/projectItem", {title: "project item", project: req.matchProject });
 })
  .patch((req, res) => {
@@ -51,7 +51,8 @@ router.route("/:id")
 })
  .delete((req, res) => {
 	webApps = webApps.filter((app, index) => index != req.matchIndex);
-        res.redirect(req.baseUrl);
+console.log(req.baseUrl);        
+res.redirect("/projects");
         
 });
 

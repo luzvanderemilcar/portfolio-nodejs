@@ -11,9 +11,9 @@
 
   --secondary-color: lightblue;
 
-  --lightgray-color: #e2e1e6;
-  --lightgray-hover: #e7e8ec;
-  --lightgray-clicked: #bfc0c3;
+  --lightgray-color: #e2e2e2;
+  --lightgray-hover: #e7e7e7;
+  --lightgray-clicked: #cbcbcb;
 
   --white-color: #fff;
   --black-color: #000;
@@ -53,13 +53,13 @@ html {
 
 * { padding : 0; margin: 0 }
 
-body { padding: 10vh  0 0; font-size: 14px; background-color: var(--bg-color, #f9f9f9);  }
+body {padding-top: 5vh;  font-size: 14px; background-color: var(--bg-color, #f9f9f9);  }
 
 h1,h2,h3,h4,h5 {  margin-block: 1em; font-family: "Roboto", "Monospace"; }
 
-main { margin: 5%;}
+main {margin: 10% 2.5% 5%; padding: 5%;}
 
-section { margin-block 5%; padding: 5% 2.5%  }
+section { margin-block: 5%; padding: 5% 2.5%; background-color: var(--lightgray-color, #F3F3F3) }
 
 header {margin: 2.5% }
 
@@ -149,9 +149,20 @@ footer ul,ol { margin: 1em auto auto 1em; };
 
 
 div.copyright-infos { font-size: 0.65em }
+/* Project Item Page */
+
+.project-contributors { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+
+div.contributor-item {}
+
+img.contributor-image {width: 30%;  }
 
 
 /* About pages */
+
+div.description { border-left : 5px solid var(--secondary-color, darkgray); padding-left: 5%; }
+
+.ul-description {padding-left: 5%; }
 
 .subsection {
   background-color: var(--white-color, white);
@@ -172,6 +183,6 @@ div.copyright-infos { font-size: 0.65em }
 /*  Extended windows */
 
 @media (min-width: 1024px) {
-body { font-size: 16px };
+body { font-size: 12px };
 
 }

@@ -4,7 +4,7 @@
   <%- include('../partials/head'); %>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
-<body class="container">
+<body>
 
 <header>
   <%- include('../partials/header'); %>
@@ -23,20 +23,26 @@
 <section>
   <div class="intro">
     <h2><%= locals.sectionHeading %></h2>
-    <div class="overview"><%= locals.overview %></div>
-    <hr />
+    <div class="overview subsection">
+       <p><%= locals.overview %></p>
+    </div>
+  </div>
+</section>
+<hr />
+<section>
+  <div>
     <h2><%= locals.lists?.introductoryPhrase %></h2>
-    <div class="skills">
-	<% locals.lists?.items.forEach(listItem => { %>
-		<ul>
-		  <li><%= listItem %></li>
-		</ul>
+   </div>    
+   <div class="subsection 4skills">
+   <% locals.lists?.items.forEach(listItem => { %>
+     <ul>
+       <li><%= listItem %></li>
+     </ul>
 	<% }); %>
     </div>
   <div>
     <a href="/about" appearance="button" >More</a>
   </div>
-</div>
 </section>
 </main>
 

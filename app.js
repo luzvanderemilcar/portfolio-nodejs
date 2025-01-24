@@ -26,5 +26,4 @@ app.use('/about', aboutRouter);
 // Configuration server port
 
 app.listen(port, () => { console.log(`Server listening on port ${port}`)
-})
-
+});

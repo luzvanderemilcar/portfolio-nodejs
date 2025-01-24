@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <%- include('../partials/head'); %>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
-<body class="container">
+<body>
 
 <header>
   <%- include('../partials/header'); %>
 </header>
 
 <main>
-  <section class="layout rounded-corner padded">
+  <section class="rounded-corner">
      <h1><%= locals.firstHeading %></h1>
-     <div class="title">
-        <ul>
+     <div class="title description">
+        <ul class="ul-description">
          <% locals.titles.forEach(title =>{ %>
            <li><%= title.name %></li>
          <% }); %>
@@ -22,16 +22,18 @@
      </div>
   </section>
 
-</hr>
-
   <section>
   <div>
     <h2>Education</h2>
-    <p><%= locals.education?.description %></p>
+    <% if (locals.education?.description) { %>
+     <div class="description">
+       <p><%= locals.education?.description %></p>
+    </div>
+    <% } %>
   </div>
 </hr />
 <% locals.education?.list?.forEach(educationItem => { %> 
-  <div>
+  <div class="subsection">
   <h3><%= educationItem.heading  %></h3>
   <p><%= educationItem.schoolName %></p>
   <hr class="heading-base" />
@@ -54,11 +56,11 @@
     </div>
   </div>
   <% if (section.description) { %>
-    <div class="section-description">
+    <div class="description">
       <p><%= section.description %></p>
     </div>
   <% } %>
-  <hr />
+
   <% if (section.lists) { %>
     <% section.lists.forEach(list => { %>
       <div class="subsection">
