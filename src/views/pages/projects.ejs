@@ -18,22 +18,24 @@
     </div>
    </section>   
    <hr />
+<% for (let projectCategory in locals.projects) { %>
    <section>
-	<h2 class="primary-text">Web apps</h2>
+	<h2 class="primary-text"><%= locals.projects[projectCategory]?.title %></h2>
 	<div class="projects">
-		<%  locals.webApps?.forEach(webApp => {%>
-		<div class="subsection" key="<%= webApp.id %>" class="project">
-		<h3><%= webApp.title %></h3>
-		<p><%= webApp.description %></p>
-		<a href="/projects/<%= webApp.id %>"  appearance="button">View</a>
-		<% if (webApp.codeLink) { %>
-			<a href="<%= webApp.codeLink %>" >Code</a>
+		<%  locals.projects[projectCategory]?.items?.forEach(project => {%>
+		<div class="subsection" key="<%= project.id %>" class="project">
+		<h3><%= project.title %></h3>
+		<p><%= project.description %></p>
+                <div class="controls">
+		<% if (project.codeLink) { %>
+			<a href="<%= project.codeLink %>" >Code</a>
 		 <% }%>
+		</div>
 		</div>
 		<% }); %>
 	</div>
-
     </section>
+<% } %>
 </main>
 
 <footer>
