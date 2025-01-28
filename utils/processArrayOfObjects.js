@@ -213,4 +213,17 @@ function sequenceArray(objectsArray, step, options = { forceExtraItem: false, to
   }
 }
 
-export { getObjectById, getObjectByKeyValue, matchValueArray, findByIdAndUpdateKeyValue, findByIdAndUpdate, copyKeys, sequenceArray, removeObjectAt, removeObjectById, testKeyValue };
+// aggregate items of second level property. The first level properties with different names, and second level one with the same name
+function aggregateItems(object, itemsKeyName) {
+let objectKeys = Object.keys(object);
+
+return objectKeys.reduce((acc, key) => {
+  let currentItem = object[key][itemsKeyName];
+  currentItem["category"] = key.trim();
+  acc.push(...currentItem);
+  console.log(acc);
+  return acc;
+}, []);
+}
+
+export { getObjectById, getObjectByKeyValue, matchValueArray, findByIdAndUpdateKeyValue, findByIdAndUpdate, copyKeys, sequenceArray, removeObjectAt, removeObjectById, testKeyValue, aggregateItems };

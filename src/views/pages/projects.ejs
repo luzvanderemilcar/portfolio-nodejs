@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
   <%- include('../partials/head'); %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
@@ -12,7 +14,7 @@
 
 <main>
    <section>
-    <h1 class="primary-text"><%= locals.firstHeading %></h1>
+    <h1 class="primary-text ubuntu-regular"><%= locals.firstHeading %></h1>
     <div class="description">
       <p>As a javascript developer, I work on some interesting projects. There is an overview of the most relevant.</p>
     </div>
@@ -20,15 +22,16 @@
    <hr />
 <% for (let projectCategory in locals.projects) { %>
    <section>
-	<h2 class="primary-text"><%= locals.projects[projectCategory]?.title %></h2>
+	<h2 class="primary-text ubuntu-regular"><%= locals.projects[projectCategory]?.title %></h2>
 	<div class="projects">
 		<%  locals.projects[projectCategory]?.items?.forEach(project => {%>
 		<div class="subsection" key="<%= project.id %>" class="project">
-		<h3><%= project.title %></h3>
+		<h3 class="ubuntu-light" ><%= project.title %></h3>
 		<p><%= project.description %></p>
                 <div class="controls">
+                <a class="btn btn-dark btn-md" href="/projects/<%= project.id %>" >View</a>
 		<% if (project.codeLink) { %>
-			<a href="<%= project.codeLink %>" >Code</a>
+			<a class="btn btn-secondary btn-md" href="<%= project.codeLink %>" >Code</a>
 		 <% }%>
 		</div>
 		</div>
@@ -41,6 +44,8 @@
 <footer>
   <%- include('../partials/footer'); %>
 </footer>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

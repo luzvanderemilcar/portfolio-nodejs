@@ -1,7 +1,7 @@
 :root {
 
   --soft-light-color: #FEFEFE;
-  --primary-color: #a01959;
+  --primary-color: #18277B;
   --primary-color-hover: #2b5292;
   --primary-color-clicked: #7c1345;
 
@@ -16,12 +16,13 @@
   --lightgray-clicked: #cbcbcb;
 
   --white-color: #fff;
+  --dark-color: #070707;
   --black-color: #000;
   -- bg-color: #f9f9f9;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-;
+
 .ubuntu-light {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
@@ -55,7 +56,7 @@ html {
 
 body {padding-top: 5vh;  font-size: 14px; background-color: var(--bg-color, #f9f9f9);  }
 
-h1,h2,h3,h4,h5 {  margin-block: 1em; font-family: "Roboto", "Monospace"; }
+h1,h2,h3,h4,h5 {  margin-top: .75em; margin-bottom: 1.25em;}
 
 main {margin: 10% 2.5% 5%; padding: 5%;}
 
@@ -66,18 +67,7 @@ header {margin: 2.5% }
 div { padding:0.25em; margin: 1em 0.25em; }
 
 form { background-color: var(--lightgray-color, lightgray); }
-p {margin-block: 0.5em; }
-
-label { display: block; }
-
-footer {padding: 0; background-color: var(--dark-color, black); color: var(--white-color, white); font-size: 0.75em; padding: 5%; }
-
-a { color: var(--primary-color, auto); }
-
-a:hover { color: var(--primary-color-hover, auto);}
-
-img { }
-
+button, .btn { margin-inline: 5px; }
 .container-fluid {
   width: calc(100% - 2*5%);
   padding: 3% 5%;
@@ -100,12 +90,15 @@ img { }
 
 .form-item { display : block; margin-block: 2.5%; }
 
+.controls { display :flex; justify-content: flex-end; margin-top: 1rem;}
+
 #navbar {
 position: fixed;
 display : flex;
 flex-direction: row;
-justify-content : space-around;
+justify-content : space-between;
 align-items: center;
+padding-inline: min(2.5%, 2.5em);
 top: 0px;
 left:0px;
 width: 100%;
@@ -116,16 +109,18 @@ background-color: var(--primary-color, dark);
 border-bottom: 2px solid var(--secondary-color, darkgray); 
 color: var(--white-color, white);
 } 
+.nav-icon-wrapper {display: flex; justify-content: space-around; }
 
+.menu-toggler-wrapper { border-right: 1px solid var(--white-color, white); padding-inline: 10px; }
 .logo-wrapper { background-color: inherit; width: 10%; max-width: 5em}
-.nav-wrapper { display: flex; justify-content: center; align-items: center; background-color: inherit; color: white;}
+.nav-link-wrapper { display: flex; justify-content: center; align-items: center; background-color: inherit; color: white;}
 
-nav ol { 
+nav menu { 
 display : flex;
 flex-direction: row;
 justify-content : space-around;
 align-items: center;
-padding: 0.5em 0px; } 
+padding: 0.25em 0px; } 
 
 nav li { display: inline; margin-right: 1.25em; } 
 
@@ -143,17 +138,23 @@ div.big-heading-container { border-left: 5px solid var(--secondary-color, darkgr
 
 
 /* footer styles */
-div.contact-infos > * { margin: 0.25em auto; }
+footer { background-color: var(--dark-color, #070707); color: var(--white-color);  }
 
-footer ul,ol { margin: 1em auto auto 1em; };
+.footer-link-container { font-size: 0.8em; display: flex; flex-wrap: wrap; }
 
+.footer-link-wrapper { margin: 0.25rem; }
 
-div.copyright-infos { font-size: 0.65em }
+h4.footer-link-heading { text-transform: uppercase; font-size: .75rem;}
+
+div.copyright-infos { font-size: 0.65em ; text-align: center}
+
 /* Project Item Page */
+
+section.project-view { box-shadow: 0 0 1px 1px 00000090; }
 
 .project-contributors { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; }
 
-div.contributor-item {}
+div.contributor-item { }
 
 img.contributor-image {width: 30%;  }
 
@@ -161,7 +162,6 @@ img.contributor-image {width: 30%;  }
 /* About pages */
 
 div.description { border-left : 5px solid var(--secondary-color, darkgray); padding-left: 5%; }
-
 .ul-description {padding-left: 5%; }
 
 .subsection {

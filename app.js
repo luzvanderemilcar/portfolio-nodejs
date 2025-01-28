@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 import express from "express";
-import bodyParser from "body-parser";
 import homeRouter from "./routes/home.js";
 import projectRouter from "./routes/projects.js";
 import aboutRouter from "./routes/about.js";
@@ -14,8 +13,6 @@ app.set('views', './src/views')
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
-
-app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('public'));
 
