@@ -1,9 +1,5 @@
 function isString(value) {
-  if (typeof value === "string") {
-    return true
-  } else {
-    return false
-  }
+  return typeof value === "string";
 }
 
 function nonStringError(value) {

@@ -13,8 +13,10 @@
 </header>
 
 <main>
-  <section class="rounded-corner">
+  <section id="titre" class="rounded-corner">
+    <div class="header">
      <h1><%= locals.firstHeading %></h1>
+    </div>
      <div class="title description">
         <ul class="ul-description">
          <% locals.titles.forEach(title =>{ %>
@@ -24,7 +26,7 @@
      </div>
   </section>
 
-  <section>
+  <section id="education">
   <div>
     <h2>Education</h2>
     <% if (locals.education?.description) { %>
@@ -51,7 +53,7 @@
 
 <% locals.sections?.forEach(section => { %>
 <section id="<%= section.title %>" >
-  <div class="header-div">
+  <div class="header">
     <% if (section.icon) %> <div class="header-icon"><%= section.icon %></div>
     <div class="header-text">
       <h2 class="heading"><%= section.sectionHeading %></h2>
@@ -80,17 +82,25 @@
 </section>
 
 <% }); %>
-<section>
-
+<section id="contact">
+  <div class="header">
+      <h2 class="heading">Contacts</h2>
+  </div>
+  <div class="subsection">
+    <ul>
+     <% locals.contactLinks?.forEach(link => { %>
+     <li><a class="contact-link" href="<%= link.href %>" ><!--img src="<%= link.icon %>" /--><span><%= link.name %> </span></a></li>
+     <% }); %>
+    </ul>
+  </div>
 </section>
-
 </main>
-
 <footer>
   <%- include('../partials/footer'); %>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </body>
 </html>

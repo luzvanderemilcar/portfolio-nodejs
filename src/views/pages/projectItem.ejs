@@ -21,7 +21,9 @@
   <section class="project-view padded"  "projectid"="<%= locals.project?.id %>" >
     <div class="intro">
         <h2><%= locals.project?.title %></h2>
-        <img src="<%= locals.project?.imageUrl %>" alt="image of <%= locals.project?.title %>" />
+        <% if (locals.project?.imageUrl) {%> 
+          <img src="<%= locals.project.imageUrl %>" alt="image of <%= locals.project?.title %>" />
+        <% } %>
     </div>
     <hr />
     <div class="info">
@@ -41,10 +43,12 @@
         <h3>Contributors</h3>
           <% locals.project?.contributors?.forEach(contributor => { %>
             <div class="contributor-item text-center">
-               <img class="contributor-image" src="<%= contributor.imageLink %>" alt="photo of <%= contributor.name %>"
+               <a class="contributor-profile-link" href="<%= contributor.profileLink|| "#"  %>" >
+                <% if (contributor.imageLink) { %>
+                   <img class="contributor-image" src="<%= contributor.imageLink %>" alt="photo of <%= contributor.name %>" />
+                <% } %>  
                <p class="contributor-name ubuntu-light-italic"><%= contributor.name %></p>
-               <p class="contributor-details"><%= contributor.details %></p>
-               <a class="contributor-profile-link" href="<%= contributor.profileLink %>" >View</a>
+               </a>
             </div>
           <% }); %>
      </div>
@@ -52,9 +56,9 @@
    </div>
    <div class="controls">
       <% if (project.codeLink) { %>
-      <a class="btn btn-secondary btn-sm" href="<%= project.codeLink %>" >Code</a>
+      <a class="btn btn-secondary btn-sm" href="<%= project.codeLink %>" ><span>[code]</span><span hidden>View code</span></a>
 		 <%  }%>
-      <a class="btn btn-outline-dark btn-sm" href="/projects" >Back</a>
+      <a class="btn btn-outline-dark btn-sm" href="/projects" ><span>📽</span><span hidden>Back to  projects</span></a>
    </div>
     </section>
 

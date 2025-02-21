@@ -14,12 +14,12 @@
 
 <main>
 <section>
+  <div class=" header">
+        <h1 class="primary-text"><%= locals.firstHeading %></h1>
+  </div>
   <div class="main-container">
     <img class="main-image"  src="/assets/images/main-picture.jpg" alt="pictures of <%= locals.name || "me" %>" />
-    <div class="big-heading-container">
-    <h1 class="primary-text"><%= locals.firstHeading %></h1>
     <p><%= locals.name %></p>
-    </div>  
   </div>
 </section>
 <section>
@@ -43,7 +43,8 @@
 	<% }); %>
     </div>
   <div class="controls">
-    <a class="btn btn-secondary btn-lg" href="/about" appearance="button" >More</a>
+    <a class="btn btn-primary btn-md" href="/about" appearance="button" ><span>➕</span><span hidden>Plus de details</span></a>
+    <a class="btn btn-dark btn-md" href="/projects"><span>📽</span><span hidden>Projets</span></a>
   </div>
 </section>
 </main>

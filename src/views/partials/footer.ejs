@@ -1,22 +1,16 @@
 <div class="footer-link-container padded">
-<div class="footer-link-wrapper contact-infos ">
-  <h4 class="footer-link-heading">Contacts</h4>
-  <ul>
-     <li><a class="footer-link" href="mailto:luzvanderemilcar@gmail.com">luzvanderemilcar@gmail.com</a></li>
-     <li>Example</li>
-  </ul>
-</div>
 <div class="footer-link-wrapper">
-  <h4 class="footer-link-heading">Connexions réseaux</h4>
+  <div class="header">
+    <h4 class="footer-link-heading">Connexions réseaux</h4>
+  </div>
   <ul>
    <% locals.links?.forEach(link => { %>
-     <li><a class="footer-link" href="<%= link.href %>" ><%= link.icon %><span><%= link.name %></span></a></li>
+     <li><a class="contact-link" href="<%= link.href %>" ><%= link?.icon %><span><%= link.name %></span></a></li>
    <% }); %>
   </ul>
 </div>
 </div>
 <hr />
 <div class="copyright-infos">
-  <p>Author: Luzvander EMILCAR</p>
-  <p>Copyright: 2025</p>
+  <p>© 2025 <%= locals.name %></p>
 </div>

@@ -916,5 +916,8 @@
     "developer",
     "designer"
   ],
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "eruda": "^3.4.1"
+  }
 }

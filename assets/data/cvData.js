@@ -138,7 +138,7 @@ const dataModel = {
 projects: {
   webApps : { title : "Web App", topic: "Developpment web", items: [
         {id: 1, title:"Javascript multitimer" , description:  "A timer with the ability to handle multiple timer simultaneously", summary:  "I was not planning to do a timer at the first place  but as I was developing, and was adding more features, it was clear that it was important. I came across a lot of timer application and I think, it is the pinch of salt they needed", codeLink : "", imageUrl: "", contributors: [{name: "Luzvander Emilcar", imageLink: "", details : "Luzvander is an 2 years experienced Web Developer. He praticipated on a broard range of projects, including the main Javascript language.", profileLink: ""}]},
-        {id: 2, title:"Javascript BMI calculator", description:  "A javascript Body Mass Index (BMI)  calculator that produce a summary and provide good advice accordingly", summary:  "I was not planning to do  at the first place  but as I was developing, and was adding more features, it was clear that it was important. I came across a lot of calculator application and I think, it is the pinch of salt they needed", codeLink : "", imageUrl: ""},
+        {id: 2, title:"Javascript BMI calculator", description:  "A javascript Body Mass Index (BMI)  calculator that produce a summary and provide good advice accordingly", summary:  "I was not planning to do  at the first place  but as I was developing, and was adding more features, it was clear that it was important. I came across a lot of calculator application and I think, it is the pinch of salt they needed", codeLink : "", imageUrl: "", contributors: [{name: "Luzvander Emilcar", imageLink: "", details : "Luzvander is an 2 years experienced Web Developer. He praticipated on a broard range of projects, including the main Javascript language.", profileLink: ""}, {name: "James Burklet", imageLink: "", details : "", profileLink: ""}, {name: "Johnson Ray", imageLink: "", details : "Johnson is an 3 years experienced frontend  Web Developer. He praticipated on a broard range of projects in javascript, including its most-popular frameworks like React, JQuery, Bootstrap,..", profileLink: ""}]},
         {id: 3, title:"Javascript calculator" ,  description:  "A javascript calculator developed with React", summary:  "I was not planning to do  at the first place  but as I was developing, and was adding more features, it was clear that it was important. I came across a lot of calculator application and I think, it is the pinch of salt they needed", codeLink : "https://github.com/luzvanderemilcar/calculator", imageUrl: ""}] 
    }
 },
@@ -173,5 +173,3 @@ projects: {
 };
 
 export default dataModel;
-
-//export dataModel;
